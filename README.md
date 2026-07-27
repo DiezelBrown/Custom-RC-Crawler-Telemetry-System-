@@ -14,11 +14,15 @@
 </tr>
 </table>
 
-A custom-built 1/10 scale RC crawler designed to demonstrate embedded systems, wireless telemetry, and real-time vehicle monitoring. The platform combines custom mechanical fabrication with ESP32 firmware, onboard sensors, and Bluetooth Low Energy (BLE) communication.
+The Embedded Vehicle Telemetry Platform is a custom-built 1/10-scale RC crawler that demonstrates embedded systems, PCB design, wireless telemetry, and real-time vehicle diagnostics. The system collects battery voltage, motor temperature, wheel speed, and vehicle orientation using onboard sensors and transmits the data to a Flutter mobile application over Bluetooth Low Energy (BLE). The project serves as a low-cost platform for embedded systems development, vehicle diagnostics, and robotics research
 
----
+## Problem
 
-## Features
+Most hobby-scale robotic vehicles provide little visibility into system health during operation. Diagnosing issues such as battery voltage drop, motor overheating, excessive vehicle roll, or wheel slip often requires separate instruments or trial-and-error.
+
+This project addresses that problem by providing a low-cost embedded telemetry platform capable of collecting and displaying real-time vehicle data through a Bluetooth-connected mobile application.
+
+## Key Capabilities
 
 - ✅ Custom-fabricated steel chassis
 - ✅ ESP32 embedded telemetry platform
