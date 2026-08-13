@@ -79,7 +79,7 @@ Pitch / Roll ────┘
 
 Real-world vehicle test demonstrating the **custom PCB, ESP32 firmware, onboard sensors, BLE telemetry, and Flutter dashboard** operating together on the crawler.
 
-**[▶ Watch Ground Test](Videos/ground_test_demo.mp4)**
+[▶ Watch Ground Test on YouTube](https://www.youtube.com/shorts/xAJ0upVTqmI)
 
 ### Lifted-Wheel Telemetry Test
 
@@ -87,11 +87,9 @@ Controlled drivetrain test demonstrating live **RPM, calculated speed, battery v
 
 **Maximum Calculated Unloaded Wheel Speed: 17.28 mph**
 
-[**[▶ Watch Lifted-Wheel Test](Videos/lifted_wheel_telemetry_test.mp4)**]
+[▶ Watch Lifted-Wheel Telemetry Test on YouTube](https://www.youtube.com/shorts/LLQFc_hOTcQ)
 
 > **Note:** 17.28 mph represents unloaded calculated wheel speed, not verified ground speed.
-
----
 
 ## Engineering Challenge
 
