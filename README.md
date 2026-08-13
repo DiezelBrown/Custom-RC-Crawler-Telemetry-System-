@@ -6,16 +6,13 @@
     <th>Live Telemetry Dashboard</th>
   </tr>
   <tr>
-    <td><img src="photos/rc_crawler_completed.jpg" width="400"></td>
-    <td><img src="photos/app_dashboard.png" width="400"></td>
+    <td>
+      <img src="photos/rc_crawler_completed.jpg" width="400">
+    </td>
+    <td>
+      <img src="photos/app_dashboard.png" width="400">
+    </td>
   </tr>
-</table>
-
-<td align="center">
-<img src="photos/app_dashboard.png" alt="Telemetry Dashboard" width="250"><br>
-<b>Live Telemetry Dashboard</b>
-</td>
-</tr>
 </table>
 
 The Embedded Vehicle Telemetry Platform is a custom-built 1/10-scale RC crawler that demonstrates embedded systems, PCB design, wireless telemetry, and real-time vehicle diagnostics. The system collects battery voltage, motor temperature, wheel speed, and vehicle orientation using onboard sensors and transmits the data to a Flutter mobile application over Bluetooth Low Energy (BLE). The project serves as a low-cost platform for embedded systems development, vehicle diagnostics, and robotics research
