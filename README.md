@@ -1,3 +1,4 @@
+
 # RC Crawler Telemetry Platform
 **Project Status:** ✅ Completed — Fully Operational
 > Custom 1/10-scale RC crawler integrating a custom KiCad PCB, ESP32 firmware, real-time sensor acquisition, Bluetooth Low Energy (BLE), and a Flutter mobile telemetry dashboard.
@@ -86,7 +87,7 @@ Controlled drivetrain test demonstrating live **RPM, calculated speed, battery v
 
 **Maximum Calculated Unloaded Wheel Speed: 17.28 mph**
 
-**[▶ Watch Lifted-Wheel Test](Videos/lifted_wheel_telemetry_test.mp4)**
+[**[▶ Watch Lifted-Wheel Test](Videos/lifted_wheel_telemetry_test.mp4)**](https://github.com/user-attachments/assets/acae40ac-cd61-476e-9616-ac22472809d7)
 
 > **Note:** 17.28 mph represents unloaded calculated wheel speed, not verified ground speed.
 
