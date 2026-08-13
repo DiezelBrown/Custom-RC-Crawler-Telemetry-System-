@@ -6,7 +6,7 @@
     <th>Live Telemetry Dashboard</th>
   </tr>
   <tr>
-    <td><img src="photos/rc_crawler_completed.jpg" width="400"></td>
+    <td><img src="photos/rc_crawler_completed%20(1).jpg" width="400"></td>
     <td><img src="photos/app_dashboard.png" width="400"></td>
   </tr>
 </table>
