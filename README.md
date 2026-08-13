@@ -1,5 +1,7 @@
 # RC Crawler Telemetry Platform
-**Project Status:** 🚧 Active Development
+**Project Status:** ✅ Completed — Fully Operational
+> Custom 1/10-scale RC crawler integrating a custom KiCad PCB, ESP32 firmware, real-time sensor acquisition, Bluetooth Low Energy (BLE), and a Flutter mobile telemetry dashboard.
+
 <table>
   <tr>
     <th>Custom RC Crawler</th>
@@ -11,108 +13,139 @@
   </tr>
 </table>
 
-The Embedded Vehicle Telemetry Platform is a custom-built 1/10-scale RC crawler that demonstrates embedded systems, PCB design, wireless telemetry, and real-time vehicle diagnostics. The system collects battery voltage, motor temperature, wheel speed, and vehicle orientation using onboard sensors and transmits the data to a Flutter mobile application over Bluetooth Low Energy (BLE). The project serves as a low-cost platform for embedded systems development, vehicle diagnostics, and robotics research
+
+
+
+
+## Overview
+
+The **RC Crawler Telemetry Platform** is a complete embedded system designed to collect and display real-time vehicle data during operation.
+
+An **ESP32 integrated with a custom-designed KiCad PCB** collects battery voltage, motor temperature, wheel RPM, and vehicle orientation. The firmware processes the sensor data, calculates vehicle speed, and transmits telemetry over **Bluetooth Low Energy (BLE)** to a custom **Flutter/Dart mobile application**.
+
+The project covers the complete engineering workflow from **mechanical fabrication and PCB design to embedded firmware, mobile development, hardware debugging, and real-world vehicle testing**.
+
+---
 
 ## Problem
 
-Most hobby-scale robotic vehicles provide little visibility into system health during operation. Diagnosing issues such as battery voltage drop, motor overheating, excessive vehicle roll, or wheel slip often requires separate instruments or trial-and-error.
+Hobby-scale RC vehicles provide limited visibility into important operating data such as temperature, battery voltage, speed, and vehicle orientation.
 
-This project addresses that problem by providing a low-cost embedded telemetry platform capable of collecting and displaying real-time vehicle data through a Bluetooth-connected mobile application.
-
-## Key Capabilities
-
-- ✅ Custom-fabricated steel chassis
-- ✅ ESP32 embedded telemetry platform
-- ✅ Battery voltage monitoring
-- ✅ Motor temperature monitoring
-- ✅ Wheel RPM measurement
-- ✅ Vehicle speed calculation
-- ✅ BNO055 IMU (Pitch & Roll)
-- ✅ Bluetooth Low Energy (BLE)
-- ✅ Mobile application 
-- 🔄  Custom KiCad PCB *(In Progress)*
-- ⏳ Operator-assisted recovery mode
+I built this platform to provide **real-time onboard diagnostics through a wireless mobile dashboard**.
 
 ---
 
-## Technologies
+## Project Highlights
 
-- C++
-- ESP32
-- PlatformIO
-- Bluetooth Low Energy (BLE)
-- Embedded Systems
-- Sensor Integration
-- I²C
-- OneWire
-- Hall Effect Sensor
-- MIG Welding
+- Designed and assembled a **custom KiCad PCB**
+- Developed modular **C++ firmware** for the ESP32
+- Integrated **BNO055, DS18B20, Hall-effect, and voltage sensors**
+- Implemented real-time **RPM and vehicle-speed calculations**
+- Developed wireless telemetry using **Bluetooth Low Energy (BLE)**
+- Built a custom **Flutter/Dart mobile dashboard**
+- Fabricated a custom **MIG-welded steel chassis**
+- Validated the complete system through **real-world ground testing**
 
 ---
 
-## Current Telemetry
+## System Architecture
 
-| Feature | Status |
-|----------|--------|
-| Battery Voltage | ✅ |
-| Motor Temperature | ✅ |
-| Wheel RPM | ✅ |
-| Vehicle Speed | ✅ |
-| Pitch | ✅ |
-| Roll | ✅ |
-| Bluetooth | ✅ |
+```text
+Battery Voltage ─┐
+Motor Temp ──────┤
+Wheel RPM ───────┼──> ESP32 + Custom PCB ──> BLE ──> Flutter Dashboard
+Pitch / Roll ────┘
+```
+
+---
+
+## Live Telemetry
+
+| Measurement | Sensor / Method |
+| --- | --- |
+| Battery Voltage | Voltage Sensor |
+| Motor Temperature | DS18B20 |
+| Wheel RPM | Hall-Effect Sensor |
+| Vehicle Speed | Calculated from Wheel RPM |
+| Pitch & Roll | BNO055 IMU |
+| Wireless Telemetry | ESP32 BLE |
+
+---
+
+## 🎥 Demo Videos
+
+### Ground Test — Full System
+
+Real-world vehicle test demonstrating the **custom PCB, ESP32 firmware, onboard sensors, BLE telemetry, and Flutter dashboard** operating together on the crawler.
+
+**[▶ Watch Ground Test](Videos/ground_test_demo.MOV)**
+
+### Lifted-Wheel Telemetry Test
+
+Controlled drivetrain test demonstrating live **RPM, calculated speed, battery voltage, motor temperature, pitch, and roll telemetry**.
+
+**Maximum Calculated Unloaded Wheel Speed: 17.28 mph**
+
+**[▶ Watch Lifted-Wheel Test](Videos/lifted_wheel_telemetry_test.MOV)**
+
+> **Note:** 17.28 mph represents unloaded calculated wheel speed, not verified ground speed.
+
+---
+
+## Engineering Challenge
+
+During vehicle integration, the ESP32 began **overheating and eventually stopped communicating**. After replacing the ESP32, the same failure occurred again.
+
+I systematically isolated the problem using a digital multimeter by:
+
+- Measuring power rails throughout the custom PCB
+- Correcting the buck converter output to a regulated **5.0 V**
+- Checking continuity and resistance between the ESP32 **3.3 V rail and ground**
+- Testing the PCB independently from the ESP32
+- Isolating and testing the battery-voltage sensing circuit
+
+Testing revealed that the PCB's original **two-resistor voltage divider was not reducing the battery-sense voltage correctly**, allowing excessive voltage to reach the ESP32.
+
+I replaced the original voltage-divider implementation with the external voltage-sensor module used during the project's prototype stage. The module safely scales the battery voltage before the signal reaches the ESP32 ADC.
+
+After implementing the fix, I restored and validated the complete telemetry system.
+
+**Result:** Identified a repeated hardware failure, isolated the faulty subsystem, modified the circuit, and restored full system operation through measurement-driven troubleshooting.
+
+---
+
+## Tech Stack
+
+**Embedded:** C++, ESP32, PlatformIO, Arduino Framework  
+
+**Wireless:** Bluetooth Low Energy (BLE)  
+
+**Sensors:** BNO055, DS18B20, Hall-effect sensor, voltage sensing  
+
+**PCB:** KiCad, schematic capture, PCB layout, soldering  
+
+**Mobile:** Flutter, Dart  
+
+**Mechanical:** MIG welding, custom steel chassis fabrication  
+
+**Tools:** Git, GitHub, VS Code, digital multimeter
 
 ---
 
 ## Repository Structure
 
 ```text
-firmware/
-├── ESP32 firmware
-
-hardware/
-├── BOM.md
-├── HARDWARE.md
-├── pinout.md
-└── wiring.md
-
-docs/
-├── Development updates
-└── Testing results
-
-photos/
-├── Build photos
-└── Demonstrations
+├── firmware/       # ESP32 C++ firmware
+├── hardware/       # KiCad PCB files, BOM, pinout & wiring
+├── mobile_app/     # Flutter/Dart telemetry application
+├── docs/           # Development & testing documentation
+├── photos/         # Build and system photos
+├── Videos/         # Demonstration videos
+└── README.md
 ```
 
 ---
 
-## Current Status
+## Project Outcome
 
-### Completed
-
-- ✅ Steel chassis
-- ✅ ESP32 firmware
-- ✅ Battery voltage sensor
-- ✅ DS18B20 temperature sensor
-- ✅ Hall-effect RPM sensor
-- ✅ BNO055 IMU
-- ✅ Bluetooth Low Energy
-- ✅  Mobile telemetry application
-### In Progress
-
-- 🔄Custom KiCad PCB
-
-### Planned
-
-- ⏳ Operator-assisted recovery mode
-- ⏳ Data logging
-
----
-
-## Future Goals
-
-- Develop a cross-platform mobile application.
-- Design a custom KiCad PCB.
-- Implement Bluetooth-based operator controls.
-- Develop an operator-assisted recovery mode.
+Successfully **designed, fabricated, programmed, debugged, and tested** a complete embedded telemetry platform capable of collecting, processing, transmitting, and displaying real-time vehicle data during operation.
