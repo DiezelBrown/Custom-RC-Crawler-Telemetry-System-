@@ -87,7 +87,7 @@ Controlled drivetrain test demonstrating live **RPM, calculated speed, battery v
 
 **Maximum Calculated Unloaded Wheel Speed: 17.28 mph**
 
-[**[▶ Watch Lifted-Wheel Test](Videos/lifted_wheel_telemetry_test.mp4)**](https://github.com/user-attachments/assets/acae40ac-cd61-476e-9616-ac22472809d7)
+[**[▶ Watch Lifted-Wheel Test](Videos/lifted_wheel_telemetry_test.mp4)**]
 
 > **Note:** 17.28 mph represents unloaded calculated wheel speed, not verified ground speed.
 
