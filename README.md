@@ -1,11 +1,15 @@
 # RC Crawler Telemetry Platform
 **Project Status:** 🚧 Active Development
-<table align="center">
-<tr>
-<td align="center">
-<img src="photos/IMG_3851.jpeg" alt="RC Crawler" width="250"><br>
-<b>Custom RC Crawler</b>
-</td>
+<table>
+  <tr>
+    <th>Custom RC Crawler</th>
+    <th>Live Telemetry Dashboard</th>
+  </tr>
+  <tr>
+    <td><img src="photos/rc_crawler_completed.jpg" width="400"></td>
+    <td><img src="photos/app_dashboard.png" width="400"></td>
+  </tr>
+</table>
 
 <td align="center">
 <img src="photos/app_dashboard.png" alt="Telemetry Dashboard" width="250"><br>
